@@ -1,0 +1,9 @@
+﻿CREATE TABLE [dbo].[Сontracts] (
+    [Id]        UNIQUEIDENTIFIER DEFAULT (NEWID()) NOT NULL,
+    [IdUtility] UNIQUEIDENTIFIER NOT NULL,
+    [IdAddress] UNIQUEIDENTIFIER NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Сontracts_To_Utilities] FOREIGN KEY ([IdUtility]) REFERENCES [dbo].[Utilities] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT [FK_Сontracts_To_Addresses] FOREIGN KEY ([IdAddress]) REFERENCES [dbo].[Addresses] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+);
+

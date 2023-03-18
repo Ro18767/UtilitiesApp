@@ -1,0 +1,51 @@
+﻿<Window x:Class="UtilitiesApp.Views.Utilities.CRUDWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UtilitiesApp.Views.Utilities"
+        mc:Ignorable="d"
+ Title="CRUDWindow" SizeToContent="WidthAndHeight"
+        Loaded="Window_Loaded">
+    <StackPanel Orientation="Vertical" Margin="10">
+        <Button  Padding="0" FontSize="25" x:Name="ButtonBack" Click="ButtonBack_Click">Назад</Button>
+        <Label Content="Редактор Комунальной услуги" HorizontalAlignment="Center"
+               FontSize="30" FontWeight="DemiBold"/>
+        <Grid Margin="70 30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Id:" Grid.Row="0" Grid.Column="0"
+                   FontSize="18"/>
+            <Label Content="Name:" Grid.Row="1" Grid.Column="0"
+                   FontSize="18"/>
+            <Label Content="Price:" Grid.Row="2" Grid.Column="0"
+                   FontSize="18"/>
+            <Label Content="UnitName:" Grid.Row="3" Grid.Column="0"
+                   FontSize="18"/>
+            <TextBox x:Name="InputId" Grid.Row="0" Grid.Column="1" 
+                     IsEnabled="False" Margin="0 5"/>
+            <TextBox x:Name="InputName" Grid.Row="1" Grid.Column="1" 
+                     IsEnabled="True" Margin="0 5"/>
+            <TextBox x:Name="InputPrice" Grid.Row="2" Grid.Column="1" 
+                     IsEnabled="True" Margin="0 5"/>
+            <TextBox x:Name="InputUnitName" Grid.Row="3" Grid.Column="1" 
+                     IsEnabled="True" Margin="0 5"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="ButtonSave" Content="Сохранить" Margin="30 0" Padding="10 4" 
+                    Click="ButtonSave_Click"/>
+            <Button x:Name="ButtonDelete" Content="Удалить" Margin="30 0" Padding="10 4" 
+                    Click="ButtonDelete_Click"/>
+            <Button x:Name="ButtonCancel" Content="Отмена"  Margin="30 0" Padding="10 4"
+                    Click="ButtonBack_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
